@@ -1,0 +1,63 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: dg_template
+  display_name: "Data Governance Template"
+  fields:
+    - field: data_domain
+      type: enum
+      values: ENG|PRODUCT|OPS|LOGISTICS|FINANCE|HR|MARKETING|SALES
+      display: "Data Domain"
+    - field: broad_data_category
+      type: enum
+      values: "CONTENT|METADATA|CONFIGURATION"
+      display: "Broad Data Category"
+    - field: data_category_customer
+      type: bool
+      display: "Data Category Customer"
+    - field: data_category_financial
+      type: bool
+      display: "Data Category Financial"
+    - field: data_category_location
+      type: bool
+      display: "Data Category Location"
+    - field: data_category_employee
+      type: bool
+      display: "Data Category Employee"
+    - field: data_category_hippa
+      type: bool
+      display: "Data Category Health"
+    - field: data_category_competitor
+      type: bool
+      display: "Data Category Competitor"
+    - field: data_confidentiality
+      type: enum
+      values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
+      display: "Data Confidentiality"
+    - field: environment
+      type: enum
+      values: PROD|QA|DEV|STAGING
+      display: "Environment"
+    - field: data_origin
+      type: enum
+      values: WORKDAY|SALESFORCE|DATA_LAKE|EVENT|PROMOTION|PARTNER|CONTRACTOR|OPEN_DATA
+      display: "Data Origin"
+    - field: data_creation
+      type: timestamp
+      display: "Data Creation Time"
+    - field: data_retention
+      type: enum
+      values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|5_YEARS|UNKNOWN
+      display: "Data Retention"

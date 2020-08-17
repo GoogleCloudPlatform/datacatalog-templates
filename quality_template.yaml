@@ -1,0 +1,49 @@
+# Copyright 2020 Google LLC
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: quality_template
+  display_name: "Data Quality Template"
+  fields:
+    - field: count
+      type: double
+      display: "Number of Values"
+    - field: unique_values
+      type: double
+      display: "Number of Unique Values"
+    - field: percent_missing
+      type: double
+      display: "Percentage Missing Values"
+    - field: mean
+      type: double
+      display: "Mean Value"
+    - field: std_dev
+      type: double
+      display: "Standard Deviation"
+    - field: zeros
+      type: double
+      display: "Number of Zero Values"
+    - field: min
+      type: double
+      display: "Min Value"
+    - field: median
+      type: double
+      display: "Median Value"
+    - field: max
+      type: double
+      display: "Max Value"
+    - field: date_created
+      type: timestamp
+      display: "Date Created"
+

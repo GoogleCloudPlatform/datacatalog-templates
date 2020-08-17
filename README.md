@@ -7,13 +7,15 @@ This repository contains sample Tag Templates in yaml-format and a [`create_temp
 
 Before running create_template.py, please install the pyyaml and google-cloud-datacatalog modules as follows:
 
-```pip install pyyaml
+```
+pip install pyyaml
 pip install google-cloud-datacatalog
 ```
 
 ## Running the Script
 
-```export GOOGLE_APPLICATION_CREDENTIALS='my_keyfile.json'
+```
+export GOOGLE_APPLICATION_CREDENTIALS='my_keyfile.json'
 export PROJECT='my-project-id'
 export REGION='us'
 export TEMPLATE='dg_template.yaml'

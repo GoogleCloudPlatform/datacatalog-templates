@@ -20,44 +20,63 @@ template:
       type: enum
       values: ENG|PRODUCT|OPS|LOGISTICS|FINANCE|HR|MARKETING|SALES
       display: "Data Domain"
+      required: true
+      order: 13
     - field: broad_data_category
       type: enum
       values: "CONTENT|METADATA|CONFIGURATION"
       display: "Broad Data Category"
+      required: true
+      order: 12
     - field: data_category_customer
       type: bool
       display: "Data Category Customer"
+      order: 11
     - field: data_category_financial
       type: bool
       display: "Data Category Financial"
+      order: 10
     - field: data_category_location
       type: bool
       display: "Data Category Location"
+      order: 9
     - field: data_category_employee
       type: bool
       display: "Data Category Employee"
+      order: 8
     - field: data_category_hippa
       type: bool
       display: "Data Category Health"
+      order: 7
     - field: data_category_competitor
       type: bool
       display: "Data Category Competitor"
+      order: 6
     - field: data_confidentiality
       type: enum
       values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
       display: "Data Confidentiality"
+      order: 5
     - field: environment
       type: enum
       values: PROD|QA|DEV|STAGING
       display: "Environment"
+      order: 4
     - field: data_origin
       type: enum
       values: WORKDAY|SALESFORCE|DATA_LAKE|EVENT|PROMOTION|PARTNER|CONTRACTOR|OPEN_DATA
       display: "Data Origin"
+      order: 3
     - field: data_creation
       type: timestamp
       display: "Data Creation Time"
+      order: 2
     - field: data_retention
       type: enum
       values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|5_YEARS|UNKNOWN
       display: "Data Retention"
+      order: 1
+    - field: documentation
+      type: string
+      display: "Documentation"
+      order: 0

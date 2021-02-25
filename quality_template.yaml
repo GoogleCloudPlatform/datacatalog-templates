@@ -19,31 +19,47 @@ template:
     - field: count
       type: double
       display: "Number of Values"
+      required: true
+      order: 10
     - field: unique_values
       type: double
       display: "Number of Unique Values"
-    - field: percent_missing
+      required: true
+      order: 9
+    - field: null_values
       type: double
-      display: "Percentage Missing Values"
-    - field: mean
+      display: "Number of Null Values"
+      order: 8
+    - field: mean_val
       type: double
       display: "Mean Value"
+      order: 7
     - field: std_dev
       type: double
       display: "Standard Deviation"
+      order: 6
     - field: zeros
       type: double
       display: "Number of Zero Values"
-    - field: min
+      order: 5
+    - field: min_val
       type: double
       display: "Min Value"
-    - field: median
+      order: 4
+    - field: median_val
       type: double
       display: "Median Value"
-    - field: max
+      order: 3
+    - field: max_val
       type: double
       display: "Max Value"
+      order: 2
     - field: date_created
       type: timestamp
       display: "Date Created"
+      order: 1
+    - field: max_date
+      type: timestamp
+      display: "Most Recent Date"
+      order: 0
 

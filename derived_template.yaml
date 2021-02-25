@@ -19,22 +19,29 @@ template:
     - field: parents
       type: string
       display: "Parent Data Sources"
+      order: 6
     - field: aggregated_data
       type: bool
       display: "Aggregated Data"
+      order: 5
     - field: pseudo_anonymized_data
       type: bool
       display: "Pseudo Anonymized Data"
+      order: 4
     - field: anonymized_data
       type: bool
       display: "Anonymized Data"
+      order: 3
     - field: normalized_data
       type: bool
       display: "Normalized Data"
+      order: 2
     - field: date_created
       type: timestamp
       display: "Date Created"
+      order: 1
     - field: product_created
       type: enum
       values: BIG_QUERY|DATAFLOW|COMPOSER|CLOUD FUNCTION
       display: "Product Used to Create Derived Data"
+      order: 0

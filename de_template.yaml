@@ -13,30 +13,44 @@
 # limitations under the License.
 
 template:
-- name: eng_template
+- name: de_template
   display_name: "Data Engineering Template"
   fields:
     - field: source_col
       type: String
       display: "Source Column"
-      required: true
+      order: 8
     - field: source_table
       type: String
       display: "Source Table"
-      required: true
+      order: 7
     - field: pk_col
       type: bool
       display: "Primary Key Column"
+      order: 6
     - field: fk_col
       type: bool
       display: "Foreign Key Column"
+      order: 5
     - field: incr_col
       type: bool
       display: "Incremental Column"
+      order: 4
     - field: null_col
       type: bool
       display: "Field can be NULL"
+      order: 3
     - field: updatable_col
       type: bool
       display: "Field can be updated"
+      order: 2
+    - field: update_frequency
+      type: enum
+      values: SECONDS|30-MINUTES|1-HOUR|DAILY|WEEKLY|MONTHLY|ANNUAL
+      display: "Update Frequency"
+      order: 1
+    - field: row_count
+      type: double
+      display: "Target Table Row Count"
+      order: 0
 

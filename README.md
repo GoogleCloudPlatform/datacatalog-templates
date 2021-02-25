@@ -1,6 +1,6 @@
 ## datacatalog-templates
 
-This repository contains sample Tag Templates in yaml-format and a [`create_template.py`](create_template.py) script that takes as input the yaml-formatted template and creates an actual Tag Template in Google Cloud's Data Catalog service. 
+This repository contains sample Tag Templates in yaml-format and a [`create_tag_template.py`](create_tag_template.py) script that takes as input the yaml-formatted template and creates an actual Tag Template in Google Cloud's Data Catalog service. 
 
 
 ## Dependencies
@@ -20,7 +20,7 @@ export PROJECT='my-project-id'
 export REGION='us'
 export TEMPLATE='dg_template.yaml'
 
-python create_template.py $GOOGLE_APPLICATION_CREDENTIALS $PROJECT $REGION $TEMPLATE
+python create_tag_template.py $PROJECT $REGION $TEMPLATE
 ```
 
 ## Contributing

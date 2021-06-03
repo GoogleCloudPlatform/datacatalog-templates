@@ -16,6 +16,11 @@ template:
 - name: quality_template
   display_name: "Data Quality Template"
   fields:
+    - field: score
+      type: double
+      display: "Quality Score"
+      required: true
+      order: 11
     - field: count
       type: double
       display: "Number of Values"

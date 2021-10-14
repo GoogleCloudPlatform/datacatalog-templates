@@ -1,0 +1,58 @@
+# Copyright 2021 Google LLC
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: trips_template
+  display_name: "Trips Data Quality Template"
+  fields:
+    - field: num_trips
+      type: double
+      display: "Number of Trips"
+      required: true
+      order: 8
+    - field: unique_trips
+      type: double
+      display: "Number of Unique Trips"
+      order: 7
+    - field: null_trips
+      type: double
+      display: "Number of Null Trips"
+      order: 6
+    - field: avg_trip_value
+      type: double
+      display: "Average Trip Value"
+      order: 5
+    - field: median_trip_value
+      type: double
+      display: "Median Trip Value"
+      order: 4
+    - field: std_dev
+      type: double
+      display: "Standard Deviation"
+      order: 3
+    - field: is_future_pickup
+      type: bool
+      display: "Is Future Pickup"
+      order: 2
+    - field: is_future_dropoff
+      type: bool
+      display: "Is Future Dropoff"
+      order: 1
+    - field: last_update_timestamp
+      type: datetime
+      display: "Last Update Timestamp"
+      required: true
+      order: 0
+
+

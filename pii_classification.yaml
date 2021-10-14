@@ -1,0 +1,43 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: pii_classification
+  display_name: "PII DLP Classification Template"
+  fields:
+    - field: infotypes
+      type: string
+      display: "Infotypes"
+      required: false
+      order: 4
+    - field: likelihoods
+      type: string
+      display: "Likelihoods"
+      required: false
+      order: 3
+    - field: number_findings
+      type: double
+      display: "Number of Findings"
+      required: false
+      order: 2
+    - field: time_last_scan
+      type: timestamp
+      display: "Time Last DLP Scan"
+      required: false
+      order: 1
+    - field: url
+      type: string
+      display: "URL"
+      required: false
+      order: 0

@@ -1,0 +1,62 @@
+# Copyright 2022 Google LLC
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: 311_quality_template
+  display_name: "311 Service Requests Quality Template"
+  fields:
+    - field: num_requests
+      type: double
+      display: "Number of Service Requests"
+      required: true
+      order: 9
+    - field: unique_requests
+      type: double
+      display: "Number of Unique Service Requests"
+      order: 8
+    - field: closed_requests
+      type: double
+      display: "Number of Closed Service Requests"
+      order: 7
+    - field: open_requests
+      type: double
+      display: "Number of Open Service Requests"
+      order: 6
+    - field: unknown_status_requests
+      type: double
+      display: "Number of Unknown Status Service Requests"
+      order: 5
+    - field: unique_complaints
+      type: double
+      display: "Number of Unique Complaint Types"
+      order: 4
+    - field: most_frequent_complaint_type
+      type: double
+      display: "Most Frequent Complaint Type"
+      order: 3
+    - field: most_recent_complaint_time
+      type: bool
+      display: "Most Recent Complaint Time"
+      order: 2
+    - field: future_requests
+      type: bool
+      display: "Future Service Requests"
+      order: 1
+    - field: tag_last_modified_time
+      type: datetime
+      display: "Tag Last Modified Time"
+      required: true
+      order: 0
+
+

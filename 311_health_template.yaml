@@ -25,11 +25,11 @@ template:
       display: "Average Daily Open Requests"
       order: 9
     - field: avg_daily_closed_requests
-      type: bool
+      type: double
       display: "Average Daily Closed Requests"
       order: 8
     - field: avg_daily_unknown_requests
-      type: bool
+      type: double
       display: "Average Daily Unknown Requests"
       order: 7
     - field: sum_total_requests
@@ -62,5 +62,3 @@ template:
       display: "Tag Snapshot Time"
       required: true
       order: 0
-
-

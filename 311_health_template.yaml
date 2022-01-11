@@ -1,0 +1,66 @@
+# Copyright 2022 Google LLC
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: template_311
+  display_name: "311 Service Requests Health Template"
+  fields:
+    - field: avg_daily_total_requests
+      type: double
+      display: "Average Daily Total Requests"
+      order: 10
+    - field: avg_daily_open_requests
+      type: double
+      display: "Average Daily Open Requests"
+      order: 9
+    - field: avg_daily_closed_requests
+      type: bool
+      display: "Average Daily Closed Requests"
+      order: 8
+    - field: avg_daily_unknown_requests
+      type: bool
+      display: "Average Daily Unknown Requests"
+      order: 7
+    - field: sum_total_requests
+      type: double
+      display: "Sum Total Service Requests"
+      required: true
+      order: 6
+    - field: unique_total_requests
+      type: double
+      display: "Unique Total Service Requests"
+      order: 5
+    - field: closed_total_requests
+      type: double
+      display: "Closed Total Service Requests"
+      order: 4
+    - field: open_total_requests
+      type: double
+      display: "Open Total Service Requests"
+      order: 3
+    - field: unknown_total_requests
+      type: double
+      display: "Unknown Total Service Requests"
+      order: 2
+    - field: unique_total_complaints
+      type: double
+      display: "Unique Total Complaints"
+      order: 1
+    - field: tag_snapshot_time
+      type: datetime
+      display: "Tag Snapshot Time"
+      required: true
+      order: 0
+
+

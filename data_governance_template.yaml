@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2020-2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,44 +13,20 @@
 # limitations under the License.
 
 template:
-- name: dg_template
+- name: data_governance
   display_name: "Data Governance Template"
   fields:
     - field: data_domain
       type: enum
-      values: ENG|PRODUCT|OPS|LOGISTICS|FINANCE|HR|MARKETING|SALES|CONSUMER
+      values: ENG|PRODUCT|OPERATIONS|LOGISTICS|FINANCE|HR|LEGAL|MARKETING|SALES|CONSUMER|GOVERNMENT
       display: "Data Domain"
       required: true
-      order: 16
+      order: 10
     - field: broad_data_category
       type: enum
       values: "CONTENT|METADATA|CONFIGURATION"
       display: "Broad Data Category"
       required: true
-      order: 15
-    - field: data_category_customer
-      type: bool
-      display: "Data Category Customer"
-      order: 14
-    - field: data_category_financial
-      type: bool
-      display: "Data Category Financial"
-      order: 13
-    - field: data_category_location
-      type: bool
-      display: "Data Category Location"
-      order: 12
-    - field: data_category_employee
-      type: bool
-      display: "Data Category Employee"
-      order: 11
-    - field: data_category_hippa
-      type: bool
-      display: "Data Category Health"
-      order: 10
-    - field: data_category_competitor
-      type: bool
-      display: "Data Category Competitor"
       order: 9
     - field: environment
       type: enum
@@ -68,7 +44,7 @@ template:
       order: 6
     - field: data_ownership
       type: enum
-      values: HR|FINANCE|SUPPLY CHAIN|OFFICE MANAGEMENT|MARKETING|SALES|THIRD PARTY
+      values: HR|FINANCE|LEGAL|SUPPLY CHAIN|OFFICE MANAGEMENT|MARKETING|SALES|THIRD PARTY|OPEN_DATA
       display: "Data Ownership"
       order: 5
     - field: data_asset_owner

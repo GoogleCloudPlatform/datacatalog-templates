@@ -14,7 +14,7 @@
 
 template:
 - name: cities_311
-  display_name: "311 Service Requests Health Template"
+  display_name: "Cities 311 Service Requests"
   fields:
     - field: avg_daily_total_requests
       type: double

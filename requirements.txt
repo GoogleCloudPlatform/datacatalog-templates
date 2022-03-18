@@ -1,2 +1,2 @@
-google-cloud-datacatalog==3.6.1
-yaml
+google-cloud-datacatalog==3.7.1
+PyYAML==6.0

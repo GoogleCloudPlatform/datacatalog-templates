@@ -44,6 +44,8 @@ def create_template(project_id, region, yaml_file):
                 tag_template_id = v
             if k == 'display_name':
                 tag_template.display_name = v
+            if k == 'public':
+                tag_template.is_publicly_readable = v
             if k == 'fields':
                 fields = v
                 
@@ -66,6 +68,8 @@ def create_template(project_id, region, yaml_file):
                             enum_values = fval
                         if fname == "display":
                             display = fval
+                        if fname == "description":
+                            description = fval
                         if fname == "required":
                             required = fval
                         if fname == "order":
@@ -83,6 +87,10 @@ def create_template(project_id, region, yaml_file):
                             
                             field.display_name = display
                             field.is_required = required
+                            
+                            if description:
+                                field.description = description
+                                
                             field.order = order
                             tag_template.fields[field_id] = field
                             
@@ -92,6 +100,10 @@ def create_template(project_id, region, yaml_file):
                         field.type_.primitive_type = datacatalog.FieldType.PrimitiveType.BOOL
                         field.display_name = display
                         field.is_required = required
+                        
+                        if description:
+                            field.description = description
+                        
                         field.order = order
                         tag_template.fields[field_id] = field
                     
@@ -101,6 +113,10 @@ def create_template(project_id, region, yaml_file):
                         field.type_.primitive_type = datacatalog.FieldType.PrimitiveType.STRING
                         field.display_name = display
                         field.is_required = required
+                        
+                        if description:
+                            field.description = description
+                        
                         field.order = order
                         tag_template.fields[field_id] = field
                     
@@ -110,6 +126,10 @@ def create_template(project_id, region, yaml_file):
                         field.type_.primitive_type = datacatalog.FieldType.PrimitiveType.DOUBLE
                         field.display_name = display
                         field.is_required = required
+                        
+                        if description:
+                            field.description = description
+                        
                         field.order = order
                         tag_template.fields[field_id] = field
                     
@@ -119,7 +139,11 @@ def create_template(project_id, region, yaml_file):
                         field.type_.primitive_type = datacatalog.FieldType.PrimitiveType.TIMESTAMP
                         field.display_name = display
                         field.is_required = required
+                        
+                        if description:
+                            field.description = description
                         field.order = order
+                        
                         tag_template.fields[field_id] = field
                     
         created_tag_template = dc_client.create_tag_template(parent=f'projects/{project_id}/locations/{region}', tag_template_id=tag_template_id, tag_template=tag_template)               

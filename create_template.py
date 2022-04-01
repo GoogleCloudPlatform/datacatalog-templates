@@ -55,6 +55,7 @@ def create_template(project_id, region, yaml_file):
                     datatype = None
                     enum_values = None
                     display_name = None
+                    description = None
                     required = False
                     
                     for fname, fval in field.items():

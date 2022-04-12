@@ -1,0 +1,87 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: data_discovery
+  display_name: "Data Discovery Template"
+  public: True
+  fields:
+    - field: data_domain
+      type: enum
+      values: OPERATIONS|SALES|MARKETING|FINANCE|HR|LEGAL|ENGINEERING|SUPPLY_CHAIN|REFERENCE
+      display: "Data domain"
+      description: "The broad category for this data"
+      required: true
+      order: 10
+    - field: data_subdomain
+      type: enum
+      values: TRADES|HOLDINGS|CUSTOMER|ACCOUNT|TRANSACTIONS|WATCH_HISTORY|PROSPECTS|EMPLOYEES|FINWIRE
+      display: "Data subdomain"
+      description: "The subcategory for this data"
+      required: false
+      order: 9
+    - field: data_product_type
+      type: enum
+      values: SOURCE|DERIVED
+      display: "Data product type"
+      description: "Type of data, can be either either SOURCE or DERIVED"
+      required: true
+      order: 8
+    - field: sources_of_origin
+      type: string
+      display: "Sources of origin"
+      description: "Where this data is sourced from, could be pipelines, tables, views, data files"
+      order: 7
+    - field: ingestion_frequency
+      type: enum
+      values: MINUTES|HOURS|DAILY|WEEKLY|MONTHLY|YEARLY 
+      display: "Ingestion frequency"
+      description: "How often is new data ingested"
+      order: 6
+    - field: data_confidentiality
+      type: enum
+      values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
+      display: "Data confidentiality"
+      description: "Confidentiality of the data"
+      order: 5
+    - field: global_ids
+      type: string
+      display: "Global identifiers"
+      description: "Global identifiers present in the data (e.g. customer_id, product_id, account_id, etc.)"
+      order: 4
+    - field: data_owner
+      type: string
+      display: "Data owner"
+      description: "The person/group responsible for the quality of the data"
+    - field: operations_owner
+      type: string
+      display: "Operations owner"
+      description: "The person/group responsible for the operations of the data"
+      order: 3
+    - field: access_requests
+      type: string
+      display: "Access requests"
+      description: "Link to request access to this data"
+      order: 2
+    - field: documentation
+      type: string
+      display: "Documentation"
+      description: "Link to the documentation"
+      order: 1
+    - field: last_modified_date
+      type: datetime
+      display: "Last Modified Date"
+      description: "The most recent time that this tag was updated"
+      order: 0
+

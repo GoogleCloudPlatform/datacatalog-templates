@@ -1,0 +1,56 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: data_protection
+  display_name: "Data Protection Template"
+  fields:
+    - field: is_pii
+      type: bool
+      display: "Is PII"
+      required: true
+      order: 7
+    - field: is_spii
+      type: bool
+      display: "Is SPII"
+      required: true
+      order: 6
+    - field: is_identifier
+      type: bool
+      display: "Is Identifier"
+      required: false
+      order: 5
+    - field: is_location
+      type: bool
+      display: "Is Location"
+      required: false
+      order: 4
+    - field: is_device
+      type: bool
+      display: "Is Device"
+      required: false
+      order: 3
+    - field: policy_tag
+      type: enum
+      values: PII|SPII|IDENTIFER|LOCATION|DEVICE
+      display: "Policy Tag"
+      order: 2
+    - field: last_scan_date
+      type: timestamp
+      display: "DLP Scan Date"
+      order: 1
+    - field: verification_date
+      type: timestamp
+      display: "Verification Date"
+      order: 0

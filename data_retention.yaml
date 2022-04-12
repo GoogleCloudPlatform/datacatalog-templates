@@ -20,13 +20,27 @@ template:
     - field: created_at_field
       type: string
       display: "Created at field"
-      description: "The name of the field which stores the creation time for each record"
+      description: "The name of the field which stores the creation time of each record"
       required: true
-      order: 1
+      order: 3
     - field: retention_period
       type: enum
       values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|5_YEARS|7_YEARS
       display: "Data retention period"
-      description: "The retention period for this data"
+      description: "The retention period for each record"
+      required: true
+      order: 2
+    - field: soft_deletion_period
+      type: enum
+      values: 10_DAYS|20_DAYS|30_DAYS
+      display: "Soft deletion period"
+      description: "The soft deletion period for each record"
+      required: true
+      order: 1
+    - field: purge_deadline
+      type: enum
+      values: 10_DAYS|20_DAYS|30_DAYS
+      display: "Purge deadline"
+      description: "The purge deadline for each record"
       required: true
       order: 0

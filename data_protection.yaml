@@ -19,38 +19,43 @@ template:
     - field: is_pii
       type: bool
       display: "Is PII"
+      description: "Does this asset contain PII"
       required: true
-      order: 7
+      order: 6
     - field: is_spii
       type: bool
       display: "Is SPII"
+      description: "Does this asset contain SPII"
       required: true
-      order: 6
+      order: 5
     - field: is_identifier
       type: bool
-      display: "Is Identifier"
-      required: false
-      order: 5
-    - field: is_location
-      type: bool
-      display: "Is Location"
-      required: false
+      display: "Is identifier"
+      description: "Does this asset contain an identifier"
+      required: true
       order: 4
-    - field: is_device
-      type: bool
-      display: "Is Device"
-      required: false
+    - field: taxonomy
+      type: string
+      display: "taxonomy"
+      description: "Taxonomy used to classify the data in this asset"
+      required: true
       order: 3
-    - field: policy_tag
+    - field: scan_interval
       type: enum
-      values: PII|SPII|IDENTIFER|LOCATION|DEVICE
-      display: "Policy Tag"
+      display: "Scan interval"
+      values: CONTINUOUS|DAILY|WEEKLY|MONTHLY|ON-DEMAND
+      description: "How often does the classifier scan this asset"
+      required: false
       order: 2
-    - field: last_scan_date
-      type: timestamp
-      display: "DLP Scan Date"
+    - field: masking_policies
+      type: enum
+      values: ENCRYPT|REGEX_REPLACE|NULLify
+      display: "Masking policies"
+      description: "Policies used to mask sensitive data elements in this asset"
       order: 1
-    - field: verification_date
-      type: timestamp
-      display: "Verification Date"
+    - field: masking_applied_to
+      type: enum
+      display: "Masking applied to"
+      values: LOW_RISK_AND_ABOVE|MEDIUM_RISK_AND_ABOVE|HIGH_RISK_AND_ABOVE
+      description: "Which types of data elements do the masking policies apply to (e.g. LOW_RISK_AND_ABOVE, MEDIUM_RISK_AND_ABOVE, HIGH_RISK_AND_ABOVE)"
       order: 0

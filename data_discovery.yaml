@@ -23,47 +23,57 @@ template:
       display: "Data domain"
       description: "The broad category for this data"
       required: true
-      order: 10
+      order: 12
     - field: data_subdomain
       type: enum
       values: TRADES|HOLDINGS|CUSTOMER|ACCOUNT|TRANSACTIONS|WATCH_HISTORY|PROSPECTS|EMPLOYEES|FINWIRE
       display: "Data subdomain"
       description: "The subcategory for this data"
       required: false
-      order: 9
-    - field: data_product_type
-      type: enum
-      values: SOURCE|DERIVED
-      display: "Data product type"
-      description: "Type of data, can be either either SOURCE or DERIVED"
-      required: true
-      order: 8
-    - field: sources_of_origin
+      order: 11
+    - field: data_product
       type: string
-      display: "Sources of origin"
-      description: "Where this data is sourced from, could be pipelines, tables, views, data files"
-      order: 7
-    - field: ingestion_frequency
-      type: enum
-      values: MINUTES|HOURS|DAILY|WEEKLY|MONTHLY|YEARLY 
-      display: "Ingestion frequency"
-      description: "How often is new data ingested"
-      order: 6
+      display: "Data product"
+      description: "The name of the data product which this asset belongs to"
+      required: false
+      order: 10
     - field: data_confidentiality
       type: enum
       values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
       display: "Data confidentiality"
       description: "Confidentiality of the data"
-      order: 5
+      required: true
+      order: 9
     - field: global_ids
       type: string
       display: "Global identifiers"
-      description: "Global identifiers present in the data (e.g. customer_id, product_id, account_id, etc.)"
-      order: 4
+      description: "Global identifiers present in the data (e.g. customer_id, order_id, account_id, etc.)"
+      order: 8
+    - field: data_product_type
+      type: enum
+      values: SOURCE|DERIVED
+      display: "Data product type"
+      description: "Type of data, can be either either SOURCE data or DERIVED data"
+      required: true
+      order: 7
+    - field: data_location
+      type: enum
+      values: us-central1|europe-west2|asia-northeast1
+      display: "Data location"
+      description: "What region is this data stored in (e.g. us-central1, europe-west2, etc.)"
+      required: true
+      order: 6
+    - field: ingestion_frequency
+      type: enum
+      values: MINUTES|HOURS|DAILY|WEEKLY|MONTHLY|YEARLY 
+      display: "Ingestion frequency"
+      description: "How often is new data ingested"
+      order: 5
     - field: data_owner
       type: string
       display: "Data owner"
       description: "The person/group responsible for the quality of the data"
+      order: 4
     - field: operations_owner
       type: string
       display: "Operations owner"
@@ -84,4 +94,3 @@ template:
       display: "Last Modified Date"
       description: "The most recent time that this tag was updated"
       order: 0
-

@@ -17,15 +17,47 @@ template:
   display_name: "Data Retention Template"
   public: True
   fields:
+    - field: record_type
+      type: enum
+      values: CUSTOMER|ACCOUNT|PAYMENT|PROMOTION|PRODUCT|THIRD_PARTY
+      display: "Record type"
+      description: "The type of record that this table/file/stream stores"
+      required: true
+      order: 8
+    - field: policy_type
+      type: enum
+      values: TABLE|RECORD
+      display: "Policy type"
+      description: "The type of retention policy (either TABLE or RECORD)"
+      required: true
+      order: 7
+    - field: policy_propagation
+      type: bool
+      display: "Policy propagation"
+      description: "Was this retention policy propagated?"
+      required: true
+      order: 6
+    - field: created_at_date
+      type: datetime
+      display: "Created at date"
+      description: "The date that the records in this table were created, used in conjunction with TABLE policy type"
+      required: false
+      order: 5
     - field: created_at_field
       type: string
       display: "Created at field"
-      description: "The name of the field which stores the creation time of each record"
-      required: true
+      description: "The name of the field which stores the creation time of each record, used in conjuction with RECORD policy type"
+      required: false
+      order: 4
+    - field: sql_filter
+      type: string
+      display: "SQL filter"
+      description: "An optional SQL filter to apply on the records in the table, used in conjunction with RECORD policy type and created_at_field"
+      required: false
       order: 3
     - field: retention_period
       type: enum
-      values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|5_YEARS|7_YEARS
+      values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|3_YEARS|5_YEARS|7_YEARS
       display: "Data retention period"
       description: "The retention period for each record"
       required: true
@@ -39,7 +71,7 @@ template:
       order: 1
     - field: purge_deadline
       type: enum
-      values: 10_DAYS|20_DAYS|30_DAYS
+      values: 40_DAYS|50_DAYS|60_DAYS|100_DAYS|120_DAYS|1_YEAR|2_YEARS|3_YEARS|5_YEARS|7_YEARS
       display: "Purge deadline"
       description: "The purge deadline for each record"
       required: true

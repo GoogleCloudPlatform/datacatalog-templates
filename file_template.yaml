@@ -1,0 +1,73 @@
+template:
+- name: file_metadata
+  display_name: "File Metadata Template"
+  fields:
+    - field: name
+      type: string
+      display: "File name"
+      description: "The file's name"
+      required: true
+      order: 12
+    - field: bucket
+      type: string
+      display: "Bucket"
+      description: "The file's bucket name"
+      required: true
+      order: 11
+    - field: path
+      type: string
+      display: "File path"
+      description: "The file's full path"
+      required: true
+      order: 10
+    - field: type
+      type: enum
+      values: PARQUET
+      display: "File type"
+      description: "The file's type (currently parquet is the only supported format)"
+      order: 9
+    - field: size
+      type: double
+      display: "File size"
+      description: "The file's size in bytes"
+      order: 8
+    - field: row_count
+      type: double
+      display: "Row count"
+      description: "The file's row count"
+      order: 7
+    - field: created_time
+      type: timestamp
+      display: "Created time"
+      description: "The file's creation date time"
+      order: 6
+    - field: updated_time
+      type: timestamp
+      display: "Updated time"
+      description: "The file's last modified date time"
+      order: 5
+    - field: storage_class
+      type: string
+      display: "Storage class"
+      description: "The file's storage class"
+      order: 4
+    - field: owner
+      type: string
+      display: "Owner"
+      description: "The file's owner"
+      order: 3
+    - field: content_encoding
+      type: string
+      display: "Content encoding"
+      description: "The file's content encoding"
+      order: 2
+    - field: content_language
+      type: string
+      display: "Content language"
+      description: "The file's content language"
+      order: 1
+    - field: media_link
+      type: string
+      display: "Media link"
+      description: "The file's media link"
+      order: 0

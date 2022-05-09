@@ -5,69 +5,69 @@ template:
     - field: name
       type: string
       display: "File name"
-      description: "The file's name"
+      description: "The name of the file"
       required: true
       order: 12
     - field: bucket
       type: string
       display: "Bucket"
-      description: "The file's bucket name"
+      description: "The GCS bucket where the file is stored"
       required: true
       order: 11
     - field: path
       type: string
       display: "File path"
-      description: "The file's full path"
+      description: "The fully qualified path of the file on GCS"
       required: true
       order: 10
     - field: type
       type: enum
       values: PARQUET
       display: "File type"
-      description: "The file's type (currently parquet is the only supported format)"
+      description: "The extension type of the file (parquet is currently the only supported format)"
       order: 9
     - field: size
       type: double
       display: "File size"
-      description: "The file's size in bytes"
+      description: "The size of the file in bytes"
       order: 8
-    - field: row_count
+    - field: num_rows
       type: double
-      display: "Row count"
-      description: "The file's row count"
+      display: "Num rows"
+      description: "The number of rows in the file"
       order: 7
     - field: created_time
       type: timestamp
       display: "Created time"
-      description: "The file's creation date time"
+      description: "The creation date and time of the file"
       order: 6
     - field: updated_time
       type: timestamp
       display: "Updated time"
-      description: "The file's last modified date time"
+      description: "The last modified date and time of the file"
       order: 5
     - field: storage_class
       type: string
       display: "Storage class"
-      description: "The file's storage class"
+      description: "The storage class of the file"
       order: 4
     - field: owner
       type: string
       display: "Owner"
-      description: "The file's owner"
+      description: "The owner of the file"
       order: 3
     - field: content_encoding
       type: string
       display: "Content encoding"
-      description: "The file's content encoding"
+      description: "The content encoding of the file"
       order: 2
     - field: content_language
       type: string
       display: "Content language"
-      description: "The file's content language"
+      description: "The content language of the file"
       order: 1
     - field: media_link
       type: string
       display: "Media link"
-      description: "The file's media link"
+      description: "The media link of the file"
       order: 0

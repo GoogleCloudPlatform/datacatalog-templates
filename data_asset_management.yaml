@@ -1,0 +1,82 @@
+# Copyright 2021 Google LLC
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: data_asset_management
+  display_name: "Data Asset Management Template"
+  fields:
+    - field: quality_score
+      type: double
+      display: "Quality Score"
+      required: false
+      order: 12
+    - field: date_quality_checked
+      type: datetime
+      display: "Date Last Quality Checked"
+      order: 11
+    - field: source_system
+      type: string
+      display: "Source System"
+      required: false
+      order: 10
+    - field: source_system_status
+      type: string
+      display: "Source System Status"
+      required: false
+      order: 9
+    - field: source_system_owner
+      type: string
+      display: "Source System Owner"
+      required: false
+      order: 8
+    - field: source_system_type
+      type: string
+      display: "Source System Type"
+      required: false
+      order: 7
+    - field: retention_in_months
+      type: string
+      display: "Retention In Months"
+      required: false
+      order: 6
+    - field: primary_data_domain
+      type: string
+      display: "Primary Data Domain"
+      required: false
+      order: 5
+    - field: serving_project_name
+      type: string
+      display: "Serving Project Name"
+      required: false
+      order: 4
+    - field: bq_serving_project
+      type: string
+      display: "BQ Serving Project"
+      required: false
+      order: 3
+    - field: bq_serving_dataset
+      type: string
+      display: "BQ Serving Dataset"
+      required: false
+      order: 2
+    - field: data_product_manager
+      type: string
+      display: "Data Product Manager"
+      required: false
+      order: 1
+    - field: ingestion_frequency
+      type: string
+      display: "ingestion_frequency"
+      required: false
+      order: 0

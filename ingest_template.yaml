@@ -1,0 +1,32 @@
+template:
+- name: ingest_template
+  display_name: "Data Ingestion Template"
+  fields:
+    - field: broad_data_category
+      type: enum
+      values: ANALYTICS|SHOPPING|ADS|SEARCH
+      display: "Broad Data Category"
+      required: true
+      order: 5
+    - field: phase
+      type: enum
+      values: STAGING|RAW|DISCOVERY|REFINED
+      display: "Ingest Phase"
+      order: 4
+    - field: origin_data
+      type: string
+      display: "Origin Data"
+      order: 3
+    - field: origin_function
+      type: string
+      display: "Origin Function"
+      order: 2
+    - field: data_retention
+      type: enum
+      values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|5_YEARS|UNKNOWN
+      display: "Data Retention"
+      order: 1
+    - field: is_pii
+      type: bool
+      display: "Is PII"
+      order: 0

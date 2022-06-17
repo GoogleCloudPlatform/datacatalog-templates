@@ -35,7 +35,7 @@ template:
       order: 8
     - field: data_origin
       type: enum
-      values: WORKDAY|SALESFORCE|DATA_LAKE|MARKETING EVENT|PROMOTION|THIRD PARTY|OPEN_DATA
+      values: WORKDAY|SALESFORCE|DATA_LAKE|MARKETING_EVENT|PROMOTION|THIRD_PARTY|OPEN_DATA
       display: "Data Origin"
       order: 7
     - field: data_creation
@@ -44,7 +44,7 @@ template:
       order: 6
     - field: data_ownership
       type: enum
-      values: HR|FINANCE|LEGAL|SUPPLY CHAIN|OFFICE MANAGEMENT|MARKETING|SALES|THIRD PARTY|OPEN_DATA
+      values: HR|FINANCE|LEGAL|SUPPLY_CHAIN|OFFICE_MANAGEMENT|MARKETING|SALES|THIRD_PARTY_OPS|PUBLIC_DOMAIN
       display: "Data Ownership"
       order: 5
     - field: data_asset_owner

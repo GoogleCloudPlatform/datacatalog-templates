@@ -59,6 +59,10 @@ def create_template(project_id, region, yaml_file):
                     required = False
                     
                     for fname, fval in field.items():
+                        
+                        if fname == "values":
+                            fval = fval.replace(' ', '_')
+                            
                         print(fname + "->" + str(fval))
                     
                         if fname == "field":

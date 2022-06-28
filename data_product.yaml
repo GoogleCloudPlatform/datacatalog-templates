@@ -1,0 +1,91 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: data_product
+  display_name: "Data Product Template"
+  public: False
+  fields:
+    - field: data_domain
+      type: enum
+      values: OPERATIONS|SALES|MARKETING|FINANCE|HR|LEGAL|ENGINEERING|SUPPLY_CHAIN|RETAIL|REFERENCE
+      display: "Data domain"
+      description: "The broad category for the data"
+      required: true
+      order: 11
+    - field: data_subdomain
+      type: enum
+      values: TRADE_AND_BANKING|PRODUCT_EVENTS|FINANCIAL_INSIGHTS|CUSTOMER_ACCOUNTS|ANALYTICS|SALES_TRANSACTIONS|SALES_PROSPECTS|PEOPLE|NEWS
+      display: "Data subdomain"
+      description: "The subcategory for the data"
+      required: false
+      order: 10
+    - field: data_product_name
+      type: string
+      display: "Data product name"
+      description: "The name of the data product"
+      required: false
+      order: 9
+    - field: data_product_description
+      type: string
+      display: "Data product description"
+      description: "Short description of the data product"
+      required: false
+      order: 8
+    - field: business_owner
+      type: string
+      display: "Business owner"
+      description: "Name of the business person who owns the data product"
+      required: true
+      order: 7
+    - field: technical_owner
+      type: string
+      display: "Technical owner"
+      description: "Name of the technical person who owns the data product"
+      required: true
+      order: 6
+    - field: number_data_assets
+      type: double
+      display: "Number of data assets"
+      description: "Number of data assets in the data product"
+      required: false
+      order: 5
+    - field: storage_location
+      type: enum
+      values: us-east1|us-east4|us-central1|europe-west1|europe-west2|asia-northeast1|northamerica-northest1
+      display: "Storage location"
+      description: "The storage location for the data product"
+      required: true
+      order: 4
+    - field: documentation_link
+      type: string
+      display: "Documentation Link"
+      description: "Link to helpful documentation about the data product"
+      order: 3
+    - field: access_request_link
+      type: string
+      display: "Access request link"
+      description: "How to request access the data product"
+      order: 2
+    - field: data_product_status
+      type: enum
+      values: DRAFT|PENDING|REVIEW|DEPLOY|RELEASED|DEPRECATED 
+      display: "Data product status"
+      description: "Status of the data product"
+      order: 1
+    - field: last_modified_date
+      type: datetime
+      display: "Last modified date"
+      description: "The last time this annotation was modified"
+      order: 0

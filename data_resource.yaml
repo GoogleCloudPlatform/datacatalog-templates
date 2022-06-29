@@ -13,8 +13,8 @@
 # limitations under the License.
 
 template:
-- name: data_asset
-  display_name: "Data Asset Template"
+- name: data_resource
+  display_name: "Data Resource Template"
   public: False
   fields:
     - field: data_confidentiality
@@ -27,19 +27,19 @@ template:
     - field: num_fields
       type: double
       display: "Number of fields"
-      description: "Number of fields present in the data asset"
+      description: "Number of fields present in the data resource"
       required: false
       order: 7
     - field: num_records
       type: double
       display: "Number of records"
-      description: "Number of records present in the data asset"
+      description: "Number of records present in the data resource"
       required: false
       order: 6
     - field: size
       type: double
       display: "Size MB"
-      description: "Size of the data asset in MB"
+      description: "Size of the data resource in MB"
       required: false
       order: 5
     - field: refresh_rate

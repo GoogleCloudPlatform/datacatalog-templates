@@ -55,10 +55,10 @@ template:
       description: "Name of the technical person who owns the data product"
       required: true
       order: 6
-    - field: number_data_assets
+    - field: number_data_resources
       type: double
-      display: "Number of data assets"
-      description: "Number of data assets in the data product"
+      display: "Number of data resources"
+      description: "Number of data resources in the data product"
       required: false
       order: 5
     - field: storage_location

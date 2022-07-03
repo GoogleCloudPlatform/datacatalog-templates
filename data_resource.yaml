@@ -44,7 +44,7 @@ template:
       order: 5
     - field: refresh_rate
       type: enum
-      values: INSTANT|DAILY|WEEKLY|MONTHLY|YEARLY 
+      values: INSTANT|DAILY|WEEKLY|MONTHLY|QUARTERLY|YEARLY 
       display: "Refresh rate"
       description: "How often is new data appended"
       required: false

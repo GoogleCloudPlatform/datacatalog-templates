@@ -42,31 +42,34 @@ template:
       description: "Size of the data resource in MB"
       required: false
       order: 5
-    - field: refresh_rate
-      type: enum
-      values: INSTANT|DAILY|WEEKLY|MONTHLY|QUARTERLY|YEARLY 
-      display: "Refresh rate"
-      description: "How often is new data appended"
+    - field: recent_data_update
+      type: datetime
+      display: "Recent data update"
+      description: "The most recent data update time"
       required: false
       order: 4 
     - field: global_id_customer
       type: bool
       display: "Global id customer"
       description: "Global customer identifier present in the data"
+      required: false
       order: 3
     - field: global_id_account
       type: bool
       display: "Global id account"
       description: "Global account identifier present in the data"
+      required: false
       order: 2
     - field: global_id_location
       type: bool
       display: "Global id location"
       description: "Global location identifier present in the data"
+      required: false
       order: 1
     - field: global_id_product
       type: bool
       display: "Global id product"
       description: "Global product identifier present in the data"
+      required: false
       order: 0
    

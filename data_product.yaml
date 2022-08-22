@@ -23,33 +23,33 @@ template:
       display: "Data domain"
       description: "The broad category for the data"
       required: true
-      order: 14
+      order: 15
     - field: data_subdomain
       type: enum
       values: Trade_and_Banking|Product_Events|Financial_Insights|Customer_Accounts|Analytics|Sales_Transactions|Sales_Prospects|People|News
       display: "Data subdomain"
       description: "The subcategory for the data"
       required: false
-      order: 13
+      order: 14
     - field: data_product_name
       type: string
       display: "Data product name"
       description: "The name of the data product"
       required: false
-      order: 12
+      order: 13
     - field: data_product_description
       type: string
       display: "Data product description"
       description: "Short description of the data product"
       required: false
-      order: 11
+      order: 12
     - field: data_confidentiality
       type: enum
       values: Public|Internal_Use_Only|Confidential|Highly_Confidential|Price_Sensitive_and_Secret
       display: "Data confidentiality"
       description: "The confidentiality of the data product"
       required: true
-      order: 6
+      order: 11
     - field: business_criticality
       type: enum
       values: High|Medium|Low

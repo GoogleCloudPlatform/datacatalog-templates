@@ -17,35 +17,41 @@ template:
   display_name: "Data Resource Template"
   public: False
   fields:
-    - field: data_confidentiality
+    - field: data_sensitivity
       type: enum
-      values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
-      display: "Data confidentiality"
-      description: "Confidentiality of the data"
-      required: true
-      order: 8
+      values: PERSONAL_IDENTIFIABLE_INFORMATION|SENSITIVE_PERSONAL_DATA|CLIENT_IDENTIFIABLE_INFORMATION|CRITICAL_DATA_ELEMENT|LICENSED_DATA
+      display: "Data sensitivity"
+      description: "Sensitivity of data in the data resource, inferred from the sensitivity of the data elements"
+      required: false
+      order: 9
     - field: num_fields
       type: double
       display: "Number of fields"
       description: "Number of fields present in the data resource"
       required: false
-      order: 7
+      order: 8
     - field: num_records
       type: double
       display: "Number of records"
       description: "Number of records present in the data resource"
       required: false
-      order: 6
+      order: 7
     - field: size
       type: double
       display: "Size MB"
       description: "Size of the data resource in MB"
       required: false
-      order: 5
+      order: 6
     - field: recent_data_update
       type: datetime
       display: "Recent data update"
       description: "The most recent data update time"
+      required: false
+      order: 5 
+    - field: actual_data_latency
+      type: double
+      display: "Actual data latency in seconds"
+      description: "The average data latency in seconds over the past 180 days"
       required: false
       order: 4 
     - field: global_id_customer

@@ -23,49 +23,77 @@ template:
       display: "Data domain"
       description: "The broad category for the data"
       required: true
-      order: 11
+      order: 14
     - field: data_subdomain
       type: enum
       values: Trade_and_Banking|Product_Events|Financial_Insights|Customer_Accounts|Analytics|Sales_Transactions|Sales_Prospects|People|News
       display: "Data subdomain"
       description: "The subcategory for the data"
       required: false
-      order: 10
+      order: 13
     - field: data_product_name
       type: string
       display: "Data product name"
       description: "The name of the data product"
       required: false
-      order: 9
+      order: 12
     - field: data_product_description
       type: string
       display: "Data product description"
       description: "Short description of the data product"
       required: false
-      order: 8
+      order: 11
+    - field: data_confidentiality
+      type: enum
+      values: Public|Internal_Use_Only|Confidential|Highly_Confidential|Price_Sensitive_and_Secret
+      display: "Data confidentiality"
+      description: "The confidentiality of the data product"
+      required: true
+      order: 6
+    - field: business_criticality
+      type: enum
+      values: High|Medium|Low
+      display: "Business criticality"
+      description: "Business criticality of the data in the data product"
+      required: false
+      order: 10
     - field: business_owner
       type: string
       display: "Business owner"
       description: "Name of the business person who owns the data product"
       required: true
-      order: 7
+      order: 9
     - field: technical_owner
       type: string
       display: "Technical owner"
       description: "Name of the technical person who owns the data product"
       required: true
-      order: 6
+      order: 8
     - field: number_data_resources
       type: double
       display: "Number of data resources"
       description: "Number of data resources in the data product"
       required: false
-      order: 5
+      order: 7
     - field: storage_location
       type: enum
       values: us-east1|us-east4|us-central1|europe-west1|europe-west2|asia-northeast1|northamerica-northest1
       display: "Storage location"
       description: "The storage location for the data product"
+      required: true
+      order: 6
+    - field: data_retention_period
+      type: enum
+      values: 30_days|90_days|1_year|2_years|5_years|7_years|none
+      display: "Data retention period"
+      description: "The retention period of the data in the data product"
+      required: true
+      order: 5
+    - field: data_latency_slo
+      type: enum
+      values: real_time|near_real_time|15_minutes|30_minutes|hourly|daily|monthly|quarterly|yearly
+      display: "Latency SLO"
+      description: "The guaranteed latency of the data in the data product"
       required: true
       order: 4
     - field: documentation_link

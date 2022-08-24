@@ -19,7 +19,7 @@ template:
   fields:
     - field: data_sensitivity
       type: enum
-      values: PERSONAL_IDENTIFIABLE_INFORMATION|SENSITIVE_PERSONAL_DATA|CLIENT_IDENTIFIABLE_INFORMATION|CRITICAL_DATA_ELEMENT|LICENSED_DATA
+      values: Personal_Identifiable_Information|Sensitive_Personal_Data|Client_Identifiable_Information|Critical_Data_Element|Licensed_Data
       display: "Data sensitivity"
       description: "Sensitivity of data in the data resource, inferred from the sensitivity of the data elements"
       required: false

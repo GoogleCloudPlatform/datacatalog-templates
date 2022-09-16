@@ -151,6 +151,19 @@ def create_template(project_id, region, yaml_file):
                         
                         tag_template.fields[field_id] = field
                     
+                    elif datatype.lower() == "richtext":
+                        
+                        field = datacatalog.TagTemplateField()
+                        field.type_.primitive_type = datacatalog.FieldType.PrimitiveType.RICHTEXT
+                        field.display_name = display
+                        field.is_required = required
+                        
+                        if description:
+                            field.description = description
+                        field.order = order
+                        
+                        tag_template.fields[field_id] = field
+                    
         created_tag_template = dc_client.create_tag_template(parent=f'projects/{project_id}/locations/{region}', tag_template_id=tag_template_id, tag_template=tag_template)               
                         
         return created_tag_template

@@ -13,37 +13,37 @@
 # limitations under the License.
 
 template:
-- name: data_checks
-  display_name: "Data Checks"
-  public: True
+- name: integrity_checks
+  display_name: "Integrity Checks"
+  public: False
   fields:
-    - field: row_count
+    - field: total_count
       type: double
-      display: "row count"
-      description: "number of rows in the table"
+      display: "total count"
+      description: "The number of values in this field"
       required: false
-      order: 2
-    - field: is_null
+      order: 4
+    - field: distinct_count
       type: double
-      display: "is null"
-      description: "required field has null values"
+      display: "distinct count"
+      description: "The number of distinct values in this field"
+      required: false
+      order: 3
+    - field: null_count
+      type: double
+      display: "null count"
+      description: "The number of null values in this field"
       required: false
       order: 2
     - field: min_value
       type: double
       display: "min value"
-      description: "The min value"
-      required: false
-      order: 2
-    - field: duplicate_rows
-      type: double
-      display: "duplicate rows"
-      description: "The number of rows which have duplicate values"
+      description: "The min value in this field"
       required: false
       order: 1
-    - field: invalid_rating
+    - field: max_value
       type: double
-      display: "invalid rating"
-      description: "rating field has invalid values"
+      display: "max value"
+      description: "The max value in this field"
       required: false
       order: 0

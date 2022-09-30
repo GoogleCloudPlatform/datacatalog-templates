@@ -38,7 +38,7 @@ def create_template(project_id, region, yaml_file):
         template_contents = file_contents.get("template")[0]
 
         for k, v in template_contents.items():
-            print(k + "->" + str(v))
+            #print(k + "->" + str(v))
     
             if k == 'name': 
                 tag_template_id = v
@@ -63,7 +63,7 @@ def create_template(project_id, region, yaml_file):
                         if fname == "values":
                             fval = fval.replace(' ', '_')
                             
-                        print(fname + "->" + str(fval))
+                        #print(fname + "->" + str(fval))
                     
                         if fname == "field":
                             field_id = fval
@@ -98,6 +98,8 @@ def create_template(project_id, region, yaml_file):
                                 
                             field.order = order
                             tag_template.fields[field_id] = field
+                        
+                        #print(tag_template.fields[field_id])
                             
                     elif datatype.lower() == "bool":
                         
@@ -165,6 +167,8 @@ def create_template(project_id, region, yaml_file):
                         tag_template.fields[field_id] = field
                     
         created_tag_template = dc_client.create_tag_template(parent=f'projects/{project_id}/locations/{region}', tag_template_id=tag_template_id, tag_template=tag_template)               
+        
+        print(created_tag_template)
                         
         return created_tag_template
                         
@@ -172,10 +176,10 @@ def create_template(project_id, region, yaml_file):
                         
 if __name__ == '__main__':
     
-    parser = argparse.ArgumentParser(description="creates a Data Catalog Tag Template based on a yaml file specification.")
-    parser.add_argument('project_id', help='Your Google Cloud Project ID.')
-    parser.add_argument('region', help='The Google Cloud region in which to create the Tag Template.')
+    parser = argparse.ArgumentParser(description="Creates a Data Catalog tag template based on a yaml file specification.")
+    parser.add_argument('project_id', help='The Google Cloud Project ID in which to create the tag template.')
+    parser.add_argument('region', help='The Google Cloud region in which to create the tag template.')
     parser.add_argument('yaml_file', help='Path to your yaml file containing the template specification.')
     args = parser.parse_args()
     create_template(args.project_id, args.region, args.yaml_file)
-   
+    

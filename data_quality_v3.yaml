@@ -55,7 +55,7 @@ template:
       order: 1
     - field: constraint_type:constraint_name
       type: enum
-      values: PK|FK|Not Null|Unique
+      values: PK|FK|Not Null:NOT NULL|Unique
       display: "constraint name"
       description: "Constraint name on this field"
       required: false

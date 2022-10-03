@@ -26,11 +26,41 @@ dc_client = DataCatalogClient()
 OK = 0
 ERROR = -1
 
+def rename_enum_values(project_id, region, tag_template_id, field_id, enum_values):
+    
+    new_enum_values = []
+    
+    for value in enum_values:
+        
+        if len(value.split(':')) > 1:
+    
+            curr_value = value.split(':')[0]
+            new_value = value.split(':')[1]
+            new_enum_values.append(new_value)
+            
+            request = datacatalog.RenameTagTemplateFieldEnumValueRequest(
+                name='projects/{0}/locations/{1}/tagTemplates/{2}/fields/{3}/enumValues/{4}'.format(project_id, region, tag_template_id, field_id, curr_value),
+                new_enum_value_display_name=new_value
+                )
+            
+            try:
+                response = dc_client.rename_tag_template_field_enum_value(request=request)
+                print('Done.')
+            except Exception as e:
+                print('Error: Cannot rename enum value ' + curr_value + '. Error message: ' + str(e))
+                return enum_values, ERROR
+        
+        else:
+            new_enum_values.append(value)
+    
+    return new_enum_values, OK    
+    
+    
 def update_enum_field(project_id, region, tag_template_id, field_id, display_name, description, enum_values, is_required, order):
     
     tag_template_field = datacatalog.TagTemplateField()
     
-    for value in enum_values:
+    for value in enum_values:    
         enum_value = datacatalog.FieldType.EnumType.EnumValue()
         enum_value.display_name = value
         tag_template_field.type_.enum_type.allowed_values.append(enum_value)
@@ -57,9 +87,9 @@ def update_enum_field(project_id, region, tag_template_id, field_id, display_nam
         print('Done.')
     except Exception as e:
         print('Error: Cannot update enum ' + field_id + '. Error message: ' + str(e))
-        return OK
+        return ERROR
         
-    return ERROR
+    return OK
     
 
 def add_enum_field(project_id, region, tag_template_id, field_id, display_name, description, enum_values, is_required, order):
@@ -228,7 +258,19 @@ def equivalent_enum_fields(dc_field, dc_enum_values, yaml_enum_values, yaml_disp
         return False
     
     return True
-        
+
+
+def renamed_enum_values(yaml_enum_values):
+    
+    renamed = False
+    
+    for enum_value in yaml_enum_values:
+        if len(enum_value.split(':')) > 1:
+           print('Rename enum value ' + enum_value.split(':')[0] + ' to ' + enum_value.split(':')[1] + '.')
+           renamed = True
+    
+    return renamed
+
 
 def equivalent_primitive_fields(dc_field, yaml_display_name, yaml_description, yaml_is_required, yaml_order):
     
@@ -338,11 +380,6 @@ def evolve_template(mode, project_id, region, yaml_file):
                     
                     for fname, fval in field.items():
                         
-                        if fname == "values":
-                            fval = fval.replace(' ', '_')
-                            
-                        #print(fname + "->" + str(fval))
-                    
                         if fname == "field":
                             field_id = fval
                         if fname == "type":
@@ -372,11 +409,20 @@ def evolve_template(mode, project_id, region, yaml_file):
                             print('Field ' + field_id + ' (enum) has not changed.')
                             del dc_fields[field_id]
                         
-                        # enum has changed
+                        # enum has changed, but field id is the same
                         elif field_id in dc_fields and equivalent_enum_fields(dc_fields[field_id], dc_enum_values[field_id], enum_values, \
                                                                               display_name, description, is_required, order) == False:
-                        
-                            # yaml field is different from the current Data Catalog field
+                            
+                            if renamed_enum_values(enum_values) == True:
+                            
+                                # rename the enum values which have changed
+                                if mode == 'apply':
+                                    enum_values, status = rename_enum_values(project_id, region, tag_template_id, field_id, enum_values)
+                                        
+                                    if status == ERROR:
+                                        return ERROR
+                                        
+                            
                             print('Update field ' + field_id + ' (enum) because it has changed.')
                     
                             if mode == 'apply':
@@ -384,9 +430,10 @@ def evolve_template(mode, project_id, region, yaml_file):
                                                   is_required, order) 
                                 del dc_fields[field_id]
                         
-                        # we either have a new enum or a renamed enum    
+                        # we either have a new enum or a renamed enum field   
                         elif field_id not in dc_fields:
                             
+                            # updating existing enum
                             if len(field_id.split(':')) > 1:
                                 is_rename = True
                                 cur_field = field_id.split(':')[0]
@@ -399,9 +446,18 @@ def evolve_template(mode, project_id, region, yaml_file):
                                 if equivalent_enum_fields(dc_fields[cur_field], dc_enum_values[cur_field], enum_values, \
                                                           display_name, description, is_required, order) == False:    
                                  
+                                    if renamed_enum_values(enum_values) == True:
+                            
+                                        # rename the enum values which have changed using the new field_id
+                                        if mode == 'apply':
+                                            enum_values, status = rename_enum_values(project_id, region, tag_template_id, new_field, enum_values)
+                                        
+                                            if status == ERROR:
+                                                return ERROR
+                                    
                                     print('Update field ' + new_field + ' (enum) because it has changed.')
                                     
-                                    # update enum
+                                    # update the rest of the enum field
                                     if mode == 'apply':
                                         update_enum_field(project_id, region, tag_template_id, new_field, display_name, description, enum_values, \
                                                           is_required, order)
@@ -409,7 +465,7 @@ def evolve_template(mode, project_id, region, yaml_file):
                                 del dc_fields[cur_field]
                                     
                             else:
-                                # adding enum field
+                                # adding an enum field
                                 print('Add field ' + field_id + ' (enum) to the tag template.')
                             
                                 if mode == 'apply':

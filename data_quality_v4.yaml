@@ -1,0 +1,68 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: data_quality
+  display_name: "Data Quality Template"
+  public: False
+  fields:
+    - field: quality_metrics
+      type: richtext
+      display: "quality metrics"
+      description: "Quality metrics descriptions"
+      required: false
+      order: 7
+    - field: num_values
+      type: double
+      display: "number of values"
+      description: "Number of values in this field"
+      required: false
+      order: 6
+    - field: distinct_values
+      type: double
+      display: "distinct values"
+      description: "Distinct values in this field"
+      required: false
+      order: 5
+    - field: null_values
+      type: double
+      display: "null values"
+      description: "Null values in this field"
+      required: false
+      order: 4
+    - field: min_value
+      type: double
+      display: "min value"
+      description: "Min value in this field"
+      required: false
+      order: 3
+    - field: max_value
+      type: double
+      display: "max value"
+      description: "Max value in this field"
+      required: false
+      order: 2
+    - field: has_constraint
+      type: bool
+      display: "has constraint"
+      description: "Field has a constraint"
+      required: false
+      order: 1
+    - field: constraint_name
+      type: enum
+      values: PK|FK|NOT NULL|Unique
+      display: "constraint name"
+      description: "Constraint name on this field"
+      required: false
+      order: 0

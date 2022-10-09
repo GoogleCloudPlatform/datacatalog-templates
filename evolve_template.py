@@ -428,7 +428,7 @@ def evolve_template(mode, project_id, region, yaml_file):
                             if mode == 'apply':
                                 update_enum_field(project_id, region, tag_template_id, field_id, display_name, description, enum_values, \
                                                   is_required, order) 
-                                del dc_fields[field_id]
+                            del dc_fields[field_id]
                         
                         # we either have a new enum or a renamed enum field   
                         elif field_id not in dc_fields:

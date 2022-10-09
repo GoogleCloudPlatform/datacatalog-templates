@@ -75,6 +75,7 @@ For example, to rename the enum value `Not Null` to `NOT NULL`:<br>
 
 ### Unsupported tag template changes
 
+- Adding a required field to the tag template
 - Changing an optional field to required
 - Changing the datatype of a field
 
@@ -90,6 +91,8 @@ python evolve_template.py validate $PROJECT $REGION data_quality_v2.yaml    # va
 python evolve_template.py apply $PROJECT $REGION data_quality_v2.yaml       # apply the changes to the tag template for version 2
 python evolve_template.py validate $PROJECT $REGION data_quality_v3.yaml    # validate the changes to the tag template for version 3
 python evolve_template.py apply $PROJECT $REGION data_quality_v3.yaml       # apply the changes to the tag template for version 3
+python evolve_template.py validate $PROJECT $REGION data_quality_v4.yaml    # validate the changes to the tag template for version 4
+python evolve_template.py apply $PROJECT $REGION data_quality_v4.yaml       # apply the changes to the tag template for version 4
 ```
 
 ### Contributing

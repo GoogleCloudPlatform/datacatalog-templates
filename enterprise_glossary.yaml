@@ -1,0 +1,136 @@
+template:
+- name: enterprise_glossary
+  display_name: "Enterprise Glossary"
+  fields:
+    - field: source_supplier_unique_id
+      type: bool
+      display: "Source Supplier Unique ID"
+      description: "Unique ID representing the supplier identifier of the record"
+      required: false
+      order: 21
+    - field: primary_business_name
+      type: bool
+      display: "Primary Business Name"
+      description: "Single name by which the organization is primarily known or identified."
+      required: false
+      order: 20
+    - field: organization_address_street_address_line1
+      type: bool
+      display: "Organization Address Street Address Line1"
+      description: "The first line of the address where the entity is located."
+      required: false
+      order: 19
+    - field: organization_address_city
+      type: bool
+      display: "Organization Address City"
+      description: "The name of the City where the Organization is located for operations"
+      required: false
+      order: 18
+    - field: organization_address_state
+      type: bool
+      display: "Organization Address State"
+      description: "The name of the State where the Organization is located for operations"
+      required: false
+      order: 17
+    - field: organization_address_postal_code
+      type: bool
+      display: "organization_address_postal_code"
+      description: "The postal code of the organization's Primary Address."
+      required: false
+      order: 16
+    - field: organization_address_country
+      type: bool
+      display: "Organization Address Country"
+      description: "The details of the country or region where the address of the organization is located or conducts operations."
+      required: false
+      order: 15
+    - field: telephone_number
+      type: bool
+      display: "Telephone Number"
+      description: "The primary voice telephone number for the business, when dialing domestically. The National Telephone Number is created by combining the Domestic Area Code and the Local Number."
+      required: false
+      order: 14
+    - field: chief_executive_officer_first_name
+      type: bool
+      display: "Chief Executive Officer First Name"
+      description: "Most Senior Principal of Chief executive Officer of a company First Name"
+      required: false
+      order: 13
+    - field: chief_executive_officer_last_name
+      type: bool
+      display: "Chief Executive Officer Last Name"
+      description: "Most Senior Principal of Chief executive Officer of a company Last Name"
+      required: false
+      order: 12
+    - field: chief_executive_officer_name_suffix
+      type: bool
+      display: "Chief Executive Officer Name Suffix"
+      description: "Most Senior Principal of Chief executive Officer of a company Name Suffix"
+      required: false
+      order: 11
+    - field: sic_code_1
+      type: bool
+      display: "SIC Code 1"
+      description: "The primary SIC Code version 1987 Base 4 value"
+      required: false
+      order: 10
+    - field: chief_executive_officer_title
+      type: bool
+      display: "Chief Executive Officer Title"
+      description: "Most Senior Principal of Chief executive Officer of a company Title"
+      required: false
+      order: 9
+    - field: sic_code_1_base_6
+      type: bool
+      display: "SIC Code 1 - Base 6"
+      description: "The primary SIC Code version 1987 Base 6 value"
+      required: false
+      order: 8
+    - field: organization_address_county
+      type: bool
+      display: "Organization Address County"
+      description: "The details of the county where the address of the organization is located or conducts operations"
+      required: false
+      order: 7
+    - field: organization_msa_name
+      type: bool
+      display: "Organization MSA Name"
+      description: "The details of the name of the MSA (Metroploitan Statistical Area) where the address of the organization is located or conducts operations"
+      required: false
+      order: 6
+    - field: sic_code_1_base_2
+      type: bool
+      display: "SIC Code 1 - Base 2"
+      description: "The primary SIC Code version 1987 Base 2 value"
+      required: false
+      order: 5
+    - field: sic_code_1_base_4
+      type: bool
+      display: "SIC Code 1 - Base 4"
+      description: "The primary SIC Code version 1987 Base 4 value"
+      required: false
+      order: 4
+    - field: sic_code_1_base_4_description
+      type: bool
+      display: "SIC Code 1 - Base 4 Description"
+      description: "The primary SIC Code version 1987 Base 4 value description"
+      required: false
+      order: 3
+    - field: year_started
+      type: bool
+      display: "Year Started"
+      description: "Indicates the year the business legally started"
+      required: false
+      order: 2
+    - field: organization_address_postal_code_4_extension
+      type: bool
+      display: "Organization Address Postal Code plus 4 extension"
+      description: "The postal code + 4 extension for US Postal Codes "
+      required: false
+      order: 1
+    - field: company_url
+      type: bool
+      display: "Company URL"
+      description: "The URL locator for the Company Business"
+      required: false
+      order: 0

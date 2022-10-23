@@ -1,0 +1,81 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+template:
+- name: data_resource_restored
+  display_name: "Data Resource Restored Template"
+  public: False
+  fields:
+    - field: data_sensitivity
+      type: enum
+      values: Personal_Identifiable_Information|Sensitive_Personal_Data|Client_Identifiable_Information|Critical_Data_Element|Licensed_Data
+      display: "Data sensitivity"
+      description: "Sensitivity of data in the data resource, inferred from the sensitivity of the data elements"
+      required: false
+      order: 9
+    - field: num_fields
+      type: double
+      display: "Number of fields"
+      description: "Number of fields present in the data resource"
+      required: false
+      order: 8
+    - field: num_records
+      type: double
+      display: "Number of records"
+      description: "Number of records present in the data resource"
+      required: false
+      order: 7
+    - field: size
+      type: double
+      display: "Size MB"
+      description: "Size of the data resource in MB"
+      required: false
+      order: 6
+    - field: recent_data_update
+      type: datetime
+      display: "Recent data update"
+      description: "The most recent data update time"
+      required: false
+      order: 5 
+    - field: actual_data_latency
+      type: double
+      display: "Actual data latency in seconds"
+      description: "The average data latency in seconds over the past 180 days"
+      required: false
+      order: 4 
+    - field: global_id_customer
+      type: bool
+      display: "Global id customer"
+      description: "Global customer identifier present in the data"
+      required: false
+      order: 3
+    - field: global_id_account
+      type: bool
+      display: "Global id account"
+      description: "Global account identifier present in the data"
+      required: false
+      order: 2
+    - field: global_id_location
+      type: bool
+      display: "Global id location"
+      description: "Global location identifier present in the data"
+      required: false
+      order: 1
+    - field: global_id_product
+      type: bool
+      display: "Global id product"
+      description: "Global product identifier present in the data"
+      required: false
+      order: 0
+   

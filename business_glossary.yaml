@@ -1,0 +1,16 @@
+template:
+- name: business_glossary
+  display_name: "Business Glossary"
+  fields:
+    - field: business_name
+      type: string
+      display: "Business name"
+      description: "The business name of this column"
+      required: false
+      order: 1
+    - field: definition
+      type: string
+      display: "Definition"
+      description: "The definition of this column"
+      required: false
+      order: 0

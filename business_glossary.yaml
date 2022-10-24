@@ -2,15 +2,21 @@ template:
 - name: business_glossary
   display_name: "Business Glossary"
   fields:
+    - field: technical_term
+      type: string
+      display: "Technical term"
+      description: "The technical term for this column"
+      required: false
+      order: 2
     - field: business_name
       type: string
       display: "Business name"
-      description: "The business name of this column"
+      description: "The business name for this column"
       required: false
       order: 1
     - field: definition
       type: string
       display: "Definition"
-      description: "The definition of this column"
+      description: "The definition for this column"
       required: false
       order: 0

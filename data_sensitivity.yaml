@@ -25,8 +25,8 @@ template:
       order: 1
     - field: sensitive_type
       type: enum
-      values: Personal_Identifiable_Information|Sensitive_Personal_Data|Client_Identifiable_Information|Critical_Data_Element|Licensed_Data
+      values: Sensitive_Personal_Identifiable_Information|Personal_Identifiable_Information|Sensitive_Personal_Information|Personal_Information|Public_Information
       display: "Sensitive type"
-      description: "Type or category of sensitive information"
+      description: "Type or category of sensitive data"
       required: false
       order: 0

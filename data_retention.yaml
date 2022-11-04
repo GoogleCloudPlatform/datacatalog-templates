@@ -21,12 +21,14 @@ template:
       type: double
       display: "Retention period"
       description: "The retention period in number of days for the current data asset"
+      required: true
       order: 3
     - field: expiration_action
       type: enum
       values: Purge|Archive|Anonymize
       display: "Expiration action"
       description: "The action to be taken when the data expires, either Purge or Archive"
+      required: true
       order: 2
     - field: manual_overwrite
       type: bool

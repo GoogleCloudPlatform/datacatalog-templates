@@ -19,7 +19,7 @@ template:
   fields:
     - field: data_sensitivity
       type: enum
-      values: Personal_Identifiable_Information|Sensitive_Personal_Data|Client_Identifiable_Information|Critical_Data_Element|Licensed_Data
+      values: Personal_Identifiable_Information|Sensitive_Personal_Information|Sensitive_Personal_Identifiable_Information|Personal_Information|Public_Information
       display: "Data sensitivity"
       description: "Sensitivity of data in the data resource, inferred from the sensitivity of the data elements"
       required: false
@@ -50,8 +50,8 @@ template:
       order: 5 
     - field: actual_data_latency
       type: double
-      display: "Actual data latency in seconds"
-      description: "The average data latency in seconds over the past 180 days"
+      display: "Actual data latency in hours"
+      description: "The average data latency in hours in last 180 days"
       required: false
       order: 4 
     - field: global_id_customer

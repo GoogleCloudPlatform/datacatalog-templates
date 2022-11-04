@@ -240,9 +240,7 @@ def equivalent_enum_fields(dc_field, dc_enum_values, yaml_enum_values, yaml_disp
                               
     dc_field_type, dc_display_name, dc_is_required, dc_description, dc_order = dc_field
     
-    #print('dc_enum_values: ', dc_enum_values)
-    
-    if dc_enum_values.sort() != yaml_enum_values.sort():
+    if sorted(dc_enum_values) != sorted(yaml_enum_values):
         return False
     
     if dc_display_name != yaml_display_name:

@@ -55,16 +55,14 @@ python evolve_template.py $MODE $PROJECT $REGION $YAML
 - Changing a required field to optional
 - Renaming a field
 
-To rename a field, use the syntax:<br>
-current_name:new_name<br>
+To rename a field, use the syntax _current_name:new_name_<br>
 
 For example, to rename the field `constraint_type` to `constraint_name`:<br>
 ```
     - field: constraint_type:constraint_name
 ```
 
-Similarly, to rename an enum value, use the syntax:<br>
-current_value:new_value<br>
+Similarly, to rename an enum value, use the syntax _current_value:new_value_<br>
 
 For example, to rename the enum value `Not Null` to `NOT NULL`:<br>
 ```
@@ -83,7 +81,7 @@ For example, to rename the enum value `Not Null` to `NOT NULL`:<br>
 
 The repository comes with a number of sample tag templates for different subject areas ranging from data discovery to data governance. These are meant as inspiration and should be customized to your organization's vocabulary and metadata needs. 
 
-To test the [`evolve_template.py`](evolve_template.py) script, we have prepared three versions of the data quality template so that you can see the effects of the script on the tag template in Data Catalog as the yaml representation changes. This example can be run as follows:
+To test the [`evolve_template.py`](evolve_template.py) script, we have prepared four versions of the data quality template so that you can see the effects of the script on the tag template in Data Catalog as the yaml representation changes. This example can be run as follows:
 
 ```
 python create_template.py $PROJECT $REGION data_quality_v1.yaml             # create the tag template in Data Catalog

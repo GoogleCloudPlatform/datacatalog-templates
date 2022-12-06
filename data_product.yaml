@@ -19,14 +19,14 @@ template:
   fields:
     - field: data_domain
       type: enum
-      values: Operations|Sales|Marketing|Finance|HR|Legal|Engineering|Logistics|Retail|Reference
+      values: Operations|Sales|Marketing|Customer|Finance|HR|Legal|Engineering|Logistics|Retail|Reference
       display: "Data domain"
       description: "The broad category for the data"
       required: true
       order: 15
     - field: data_subdomain
       type: enum
-      values: Trade_and_Banking|Product_Events|Financial_Insights|Customer_Accounts|Analytics|Sales_Transactions|Sales_Prospects|People|News
+      values: Trade_and_Banking|Product_Events|Financial_Insights|Customer_Management|Analytics|Sales_Transactions|Sales_Prospects|People|News
       display: "Data subdomain"
       description: "The subcategory for the data"
       required: false

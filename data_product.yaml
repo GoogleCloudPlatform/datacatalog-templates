@@ -91,7 +91,7 @@ template:
       order: 5
     - field: data_latency_slo
       type: enum
-      values: real_time|near_real_time|15_minutes|30_minutes|hourly|daily|monthly|quarterly|yearly
+      values: real_time|near_real_time|15_minutes|30_minutes|hourly|daily|weekly|monthly|quarterly|yearly
       display: "Latency SLO"
       description: "The guaranteed latency of the data in the data product"
       required: true

@@ -14,7 +14,7 @@
 
 template:
 - name: completeness_template
-  display_name: "Completeness Metric and Score"
+  display_name: "Completeness Template"
   public: False
   fields:
     - field: column_name

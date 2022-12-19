@@ -14,7 +14,7 @@
 
 template:
 - name: correctness_template
-  display_name: "Correctness Metric and Score"
+  display_name: "Correctness Template"
   public: False
   fields:
     - field: column_name

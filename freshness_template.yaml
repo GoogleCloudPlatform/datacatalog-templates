@@ -14,7 +14,7 @@
 
 template:
 - name: freshness_template
-  display_name: "Freshness Metric and Score"
+  display_name: "Freshness Template"
   public: False
   fields:
     - field: column_name

@@ -21,11 +21,11 @@ template:
       type: richtext
       display: "Top users"
       description: "Top users who have queried this data asset in the past 180 days"
-      required: false
+      required: true
       order: 1
     - field: top_queries
       type: richtext
       display: "Top queries"
       description: "Top queries run against this data asset in the past 180 days"
-      required: false
+      required: true
       order: 0

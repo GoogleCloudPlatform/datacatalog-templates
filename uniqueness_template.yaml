@@ -14,7 +14,7 @@
 
 template:
 - name: uniqueness_template
-  display_name: "Uniqueness Metric and Score"
+  display_name: "Uniqueness Template"
   public: False
   fields:
     - field: column_name

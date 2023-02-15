@@ -690,7 +690,7 @@ def evolve_template(mode, project_id, region, yaml_file):
                             
                             # we have a new timestamp
                             else:
-                                print('Add field ' + field_id + ' (bool) to the tag template.')
+                                print('Add field ' + field_id + ' (timestamp) to the tag template.')
                                 if mode == 'apply':
                                     add_primitive_field(project_id, region, tag_template_id, field_id, \
                                                          datacatalog.FieldType.PrimitiveType.TIMESTAMP, \

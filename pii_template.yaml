@@ -13,7 +13,7 @@
 # limitations under the License.
 
 template:
-- name: pii_classification
+- name: pii_template
   display_name: "PII DLP Classification Template"
   fields:
     - field: infotypes

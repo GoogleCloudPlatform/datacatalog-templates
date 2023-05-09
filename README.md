@@ -1,6 +1,6 @@
 ## datacatalog-templates
 
-This repository contains sample tag templates in yaml-format. It also contains two utilities: 
+This repository contains sample tag templates in YAML format. It also contains two utilities: 
 1. [`create_template.py`](create_template.py), which creates a tag template in Data Catalog from a yaml file. 
 2. [`evolve_template.py`](evolve_template.py), which evolves an existing tag template in Data Catalog from a yaml file.  
 

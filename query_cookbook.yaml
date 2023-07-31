@@ -14,18 +14,42 @@
 
 template:
 - name: query_cookbook
-  display_name: "Query Cookbook Template"
+  display_name: "Query Cookbook"
   public: False
   fields:
     - field: top_users
       type: richtext
-      display: "Top users"
-      description: "Top users who have queried this data asset in the past 180 days"
+      display: "Most active users"
+      description: "Most active users who have queried this data asset over the past 180 days"
+      required: true
+      order: 5
+    - field: top_fields
+      type: richtext
+      display: "Most commonly selected fields"
+      description: "Most commonly selected fields on this data asset over the past 180 days"
+      required: true
+      order: 4
+    - field: top_wheres
+      type: richtext
+      display: "Most common where clauses"
+      description: "Most common where clauses on this data asset over the past 180 days"
+      required: true
+      order: 3
+    - field: top_joins
+      type: richtext
+      display: "Most common joins"
+      description: "Most common joins on this data asset over the past 180 days"
+      required: true
+      order: 2
+    - field: top_groupbys
+      type: richtext
+      display: "Most common group bys"
+      description: "Most common group by clauses on this data asset over the past 180 days"
       required: true
       order: 1
-    - field: top_queries
+    - field: top_functions
       type: richtext
-      display: "Top queries"
-      description: "Top queries run against this data asset in the past 180 days"
+      display: "Most common functions"
+      description: "Most common functions run on this data asset over the past 180 days"
       required: true
       order: 0

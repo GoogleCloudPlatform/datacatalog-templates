@@ -14,7 +14,7 @@
 
 template:
 - name: data_discovery
-  display_name: "Data Discovery Template"
+  display_name: "Data Discovery"
   public: True
   fields:
     - field: data_domain
@@ -26,7 +26,7 @@ template:
       order: 12
     - field: data_subdomain
       type: enum
-      values: TRADES|HOLDINGS|CUSTOMER|ACCOUNT|TRANSACTIONS|WATCH_HISTORY|PROSPECTS|EMPLOYEES|FINWIRE
+      values: TRADES|HOLDINGS|CUSTOMER|ACCOUNT|TRANSACTIONS|WATCH_HISTORY|PROSPECTS|EMPLOYEES|FINWIRE|LOGISTICS
       display: "Data subdomain"
       description: "The subcategory for this data"
       required: false
@@ -54,14 +54,14 @@ template:
       values: SOURCE|DERIVED
       display: "Data product type"
       description: "Type of data, can be either either SOURCE data or DERIVED data"
-      required: true
+      required: false
       order: 7
     - field: data_location
       type: enum
       values: us-central1|europe-west2|asia-northeast1
       display: "Data location"
       description: "What region is this data stored in (e.g. us-central1, europe-west2, etc.)"
-      required: true
+      required: false
       order: 6
     - field: ingestion_frequency
       type: enum

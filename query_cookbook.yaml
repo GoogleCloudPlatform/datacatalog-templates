@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2022-2023 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,35 +21,35 @@ template:
       type: richtext
       display: "Most active users"
       description: "Most active users who have queried this data asset over the past 180 days"
-      required: true
+      required: false
       order: 5
     - field: top_fields
       type: richtext
       display: "Most commonly selected fields"
       description: "Most commonly selected fields on this data asset over the past 180 days"
-      required: true
+      required: false
       order: 4
     - field: top_wheres
       type: richtext
       display: "Most common where clauses"
       description: "Most common where clauses on this data asset over the past 180 days"
-      required: true
+      required: false
       order: 3
     - field: top_joins
       type: richtext
       display: "Most common joins"
       description: "Most common joins on this data asset over the past 180 days"
-      required: true
+      required: false
       order: 2
     - field: top_groupbys
       type: richtext
       display: "Most common group bys"
       description: "Most common group by clauses on this data asset over the past 180 days"
-      required: true
+      required: false
       order: 1
     - field: top_functions
       type: richtext
       display: "Most common functions"
       description: "Most common functions run on this data asset over the past 180 days"
-      required: true
+      required: false
       order: 0

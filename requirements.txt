@@ -1,2 +1,3 @@
-google-cloud-datacatalog==3.7.1
+google-cloud-datacatalog==3.19.0
+google-cloud-dataplex==2.2.0
 pyyaml

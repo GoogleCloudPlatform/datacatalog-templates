@@ -1,17 +1,27 @@
 ## datacatalog-templates
 
-This repository contains sample tag templates in YAML format. It also contains two utilities: 
-1. [`create_template.py`](create_template.py), which creates a tag template in Data Catalog from a yaml file. 
-2. [`evolve_template.py`](evolve_template.py), which evolves an existing tag template in Data Catalog from a yaml file.  
-
+This repository contains sample aspect types and tag templates in yaml format. It also contains three scripts: 
+1. [`create_aspect_type.py`](create_aspect_type.py), which creates an aspect type in Dataplex from a yaml file.  
+2. [`create_template.py`](create_template.py), which creates a tag template in Data Catalog from a yaml file. 
+3. [`evolve_template.py`](evolve_template.py), which evolves an existing tag template from a yaml file.  
 
 ### Dependencies
 
-Before running `create_template.py` or `evolve_template.py`, install the `pyyaml` and `google-cloud-datacatalog` modules as follows:
+Before running the scripts, install the required modules as follows:
 
 ```
-pip install pyyaml
-pip install google-cloud-datacatalog
+pip install -r requirements.txt
+```
+
+### Running the `create_aspect_type.py` script
+
+```
+export GOOGLE_APPLICATION_CREDENTIALS='my_keyfile.json'
+export PROJECT='my-project-id'
+export REGION='us-central1'
+export YAML='data_quality_v1.yaml'
+
+python create_aspect_type.py $PROJECT $REGION $YAML
 ```
 
 ### Running the `create_template.py` script
@@ -98,13 +108,11 @@ python evolve_template.py apply $PROJECT $REGION data_quality_v4.yaml       # ap
 See the contributing [instructions](/CONTRIBUTING.md) to get started
 contributing.
 
-
 ### License
 
 All solutions within this repository are provided under the
 [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license. Please see
 the [LICENSE](/LICENSE) file for more detailed terms and conditions.
-
 
 ### Disclaimer
 

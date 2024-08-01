@@ -1,0 +1,14 @@
+template:
+- name: column_properties
+  display_name: "Column Properties"
+  fields:
+    - field: is_sensitive
+      type: bool
+      display: "Is sensitive"
+      description: "Whether this column is sensitive"
+      order: 1
+    - field: is_critical
+      type: bool
+      display: "Is critical"
+      description: "Whether this column is critical to the business"
+      order: 0

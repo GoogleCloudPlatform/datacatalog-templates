@@ -88,6 +88,9 @@ def main(project_id, region, yaml_file):
                     if display:
                         annotations_dict = {"display_name": display}
                         
+                        if description:
+                            annotations_dict["description"] = description
+                        
                         if order:
                             annotations_dict["display_order"] = order
                         

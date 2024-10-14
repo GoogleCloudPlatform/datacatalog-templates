@@ -29,3 +29,13 @@ aspect_type:
       description: "Type or category of sensitive data"
       required: false
       order: 2
+    - field: environment
+      type: enum
+      values: PROD|QA|DEV|STAGING
+      display: "Environment"
+      order: 3
+    - field: data_origin
+      type: enum
+      values: WORKDAY|SALESFORCE|DATA_LAKE|MARKETING_EVENT|PROMOTION|THIRD_PARTY|OPEN_DATA
+      display: "Data Origin"
+      order: 4

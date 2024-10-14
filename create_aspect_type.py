@@ -115,7 +115,7 @@ def main(project_id, region, yaml_file):
         aspect_type.metadata_template.type_ = "record"
         aspect_type.metadata_template.record_fields = record_fields
 
-        #print('aspect_type:', aspect_type)
+        print('aspect_type:', aspect_type)
         
         request = dataplex.CreateAspectTypeRequest(
             parent=parent,

@@ -46,6 +46,8 @@ def main(project_id, region, yaml_file):
                 aspect_type_id = v
             if k == 'display_name':
                 aspect_type.display_name = v
+            if k == 'description':
+                aspect_type.description = v
             if k == 'fields':
                 fields = v
                 

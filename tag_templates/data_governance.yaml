@@ -1,4 +1,4 @@
-# Copyright 2020-2022 Google LLC
+# Copyright 2020-2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,58 +14,36 @@
 
 template:
 - name: data_governance
-  display_name: "Data Governance Template"
+  display_name: "Data Governance Tag Template"
   fields:
     - field: data_domain
       type: enum
       values: ENG|PRODUCT|OPERATIONS|LOGISTICS|FINANCE|HR|LEGAL|MARKETING|SALES|CONSUMER|GOVERNMENT
       display: "Data Domain"
       required: true
-      order: 10
-    - field: broad_data_category
-      type: enum
-      values: "CONTENT|METADATA|CONFIGURATION"
-      display: "Broad Data Category"
-      required: true
-      order: 9
-    - field: environment
-      type: enum
-      values: PROD|QA|DEV|STAGING
-      display: "Environment"
-      order: 8
-    - field: data_origin
-      type: enum
-      values: WORKDAY|SALESFORCE|DATA_LAKE|MARKETING_EVENT|PROMOTION|THIRD_PARTY|OPEN_DATA
-      display: "Data Origin"
-      order: 7
-    - field: data_creation
-      type: timestamp
-      display: "Data Creation Time"
       order: 6
-    - field: data_ownership
-      type: enum
-      values: HR|FINANCE|LEGAL|SUPPLY_CHAIN|OFFICE_MANAGEMENT|MARKETING|SALES|THIRD_PARTY_OPS|PUBLIC_DOMAIN
-      display: "Data Ownership"
+    - field: is_content
+      type: bool
+      display: "Is Content"
+      required: false
       order: 5
-    - field: data_asset_owner
-      type: string
-      display: "Data Asset Owner"
+    - field: num_stars
+      type: double
+      display: "Number of Stars"
+      required: false
       order: 4
-    - field: data_asset_expert
-      type: string
-      display: "Data Asset Expert"
+    - field: rating
+      type: double
+      display: "Rating"
+      required: false
       order: 3
-    - field: data_confidentiality
-      type: enum
-      values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
-      display: "Data Confidentiality"
+    - field: data_creation
+      type: datetime
+      display: "Data Creation"
+      required: false
       order: 2
-    - field: data_retention
-      type: enum
-      values: 30_DAYS|60_DAYS|90_DAYS|120_DAYS|1_YEAR|2_YEARS|5_YEARS|UNKNOWN
-      display: "Data Retention"
-      order: 1
-    - field: data_asset_documentation
+    - field: data_owner
       type: string
-      display: "Data Asset Documentation"
-      order: 0
+      display: "Data Owner"
+      required: false
+      order: 1

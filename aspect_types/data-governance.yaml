@@ -1,4 +1,4 @@
-# Copyright 2024 Google LLC
+# Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,10 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 aspect_type:
 - name: data-governance
   display_name: "Data Governance"
+  description: "Data Governance Aspect Type"
   fields:
     - field: data_domain
       type: enum
@@ -22,40 +22,28 @@ aspect_type:
       display: "Data Domain"
       required: true
       order: 1
-    - field: broad_data_category
-      type: enum
-      values: "CONTENT|METADATA|CONFIGURATION"
-      display: "Broad Data Category"
-      required: true
+    - field: is_content
+      type: bool
+      display: "Is Content"
+      required: false
       order: 2
+    - field: num_stars
+      type: int
+      display: "Number of Stars"
+      required: false
+      order: 3
+    - field: rating
+      type: double
+      display: "Rating"
+      required: false
+      order: 4
     - field: data_creation
       type: datetime
-      display: "Data Creation Time"
+      display: "Data Creation"
+      required: false
       order: 5
-    - field: data_ownership
-      type: enum
-      values: HR|FINANCE|LEGAL|SUPPLY_CHAIN|OFFICE_MANAGEMENT|MARKETING|SALES|THIRD_PARTY_OPS|PUBLIC_DOMAIN
-      display: "Data Ownership"
+    - field: data_owner
+      type: string
+      display: "Data Owner"
+      required: false
       order: 6
-    - field: data_asset_owner
-      type: string
-      display: "Data Asset Owner"
-      order: 7
-    - field: data_asset_expert
-      type: string
-      display: "Data Asset Expert"
-      order: 8
-    - field: data_confidentiality
-      type: enum
-      values: PUBLIC|SHARED_EXTERNALLY|SHARED_INTERNALLY|SENSITIVE|UNKNOWN
-      display: "Data Confidentiality"
-      order: 9
-    - field: data_retention
-      type: enum
-      values: DAYS_30|DAYS_60|DAYS_90|DAYS_120|YEARS_1|YEARS_2|YEARS_5|UNKNOWN
-      display: "Data Retention"
-      order: 10
-    - field: data_asset_documentation
-      type: string
-      display: "Data Asset Documentation"
-      order: 11
